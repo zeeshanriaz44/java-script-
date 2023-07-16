@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form validation</title>
+    <style>
+      body {
+        margin: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #3498db;
+      }
+      #cotainer {
+        background-color: white;
+        padding: 50px;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 0px 0px 10px 0px;
+        text-transform: capitalize;
+      }
+      input {
+        width: 200px;
+        padding: 10px;
+        margin: 10px;
+      }
+      input[type="submit"] {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        width: 220px;
+      }
+      .error {
+        color: red;
+        margin: 0px;
+        text-align: left;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cotainer">
+      <h1>login</h1>
+      <form action="" onsubmit="return myfun()">
+        <input type="text" name="" id="username" placeholder="user name" />
+        <br />
+        <p id="erroruser" class="error"></p>
+        <input type="password" name="" id="password" placeholder="password" />
+        <br />
+        <p id="errorpass" class="error"></p>
+        <input type="submit" />
+        <br />
+      </form>
+    </div>
+    <script>
+      //   let username = document.getElementById("username");
+      //   let password = document.getElementById("password");
+      //   let flag=1;
+      //   function myfun() {
+      //     if (username.value == "") {
+      //       document.getElementById("erroruser").innerHTML =
+      //         "user name is required";
+      //         flag=0;
+      //     } else if (username.value.length < 3) {
+      //       document.getElementById("erroruser").innerHTML =
+      //         "password is mini 3 char";
+      //         flag=0;
+      //     } else{
+      //         document.getElementById("erroruser")=""
+      //         flag=1;
+      //     }
+      //     if (password.value == "") {
+      //       document.getElementById("errorpass").innerHTML =
+      //         "password is requried";
+      //     } else if (password.value.length < 5) {
+      //       document.getElementById("errorpass").innerHTML =
+      //         "password is minmum 5 char";
+      //     }
+      //     else{
+      //         document.getElementById("errorpass").innerHTML="";
+      //         flag=1;
+      //     }
+      //     if(flag){
+      //         return true
+      //     } else{
+      //         return false
+      //     }
+      //   }
+      let username = document.getElementById("username");
+      let password = document.getElementById("password");
+      let flag = 1;
+
+      function myfun() {
+        if (username.value == "") {
+          document.getElementById("erroruser").innerHTML =
+            "username is required";
+          flag = 0;
+        } else if (username.value.length < 3) {
+          document.getElementById("erroruser").innerHTML =
+            "username is mini 3 char";
+          flag = 0;
+        } else {
+          document.getElementById("erroruser").innerHTML = "";
+          flag = 1;
+        }
+        if (password.value == "") {
+          document.getElementById("errorpass").innerHTML =
+            "passwor is requried";
+        } else if (password.value.length < 4) {
+          document.getElementById("errorpass").innerHTML =
+            "passwor is mini 4 char";
+        } else {
+          document.getElementById("errorpass").innerHTML = "";
+          flag = 1;
+        }
+        if (flag) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
